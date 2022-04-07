@@ -1,0 +1,22 @@
+{
+    "name": "jquery-page",
+    "version": "1.1.3",
+    "description": "jQuery Page Transitions for HTML5 Single-Page-Apps",
+    "main": "jquery.page.js",
+    "homepage": "https://github.com/rse/jquery-page",
+    "license": "MIT",
+    "authors": [
+        "Dr. Ralf S. Engelschall <rse@engelschall.com>"
+    ],
+    "keywords": [
+        "page", "transition", "slide", "flip"
+    ],
+    "dependencies": {
+        "jquery": "latest"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ]
+}

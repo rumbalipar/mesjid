@@ -1,0 +1,39 @@
+{
+    "name":        "jquery-page",
+    "version":     "1.1.4",
+    "description": "jQuery Page Transitions for HTML5 Single-Page-Apps",
+    "main":        "jquery.page.js",
+    "keywords":    [
+        "jquery-plugin", "ecosystem:jquery",
+        "jquery", "page",
+        "page", "transition", "slide", "flip"
+    ],
+    "scripts": {
+        "test": "grunt"
+    },
+    "repository": {
+        "type": "git",
+        "url":  "https://github.com/rse/jquery-page.git"
+    },
+    "author": {
+        "name":  "Dr. Ralf S. Engelschall",
+        "email": "rse@engelschall.com",
+        "url":   "http://engelschall.com"
+    },
+    "license":  "MIT",
+    "homepage": "https://github.com/rse/jquery-page",
+    "bugs":     "https://github.com/rse/jquery-page/issues",
+    "devDependencies": {
+        "grunt":                "1.3.0",
+        "grunt-cli":            "1.3.2",
+        "grunt-contrib-jshint": "3.0.0",
+        "grunt-contrib-uglify": "5.0.0",
+        "grunt-contrib-clean":  "2.0.0",
+        "grunt-eslint":         "23.0.0",
+        "gulp":                 "4.0.2",
+        "gulp-rename":          "2.0.0",
+        "gulp-jshint":          "2.1.0",
+        "gulp-eslint":          "6.0.0",
+        "gulp-uglify":          "3.0.2"
+    }
+}

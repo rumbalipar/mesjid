@@ -1,0 +1,164 @@
+@media (min-width: 350px) {
+    .image-box {
+      min-height: 113.88px;
+    }
+    .image-box img {
+        max-height: 113.88px;
+    }
+    .description-box {
+        min-height: 48px;
+    }
+  }
+  
+  @media (min-width: 400px) {
+    .image-box {
+      min-height: 131.14px;
+    }
+    .image-box img {
+        max-height: 131.14px;
+    }
+    
+  }
+  
+  @media (min-width: 452px) {
+    .image-box {
+      min-height: 153.26px;
+    }
+    .image-box img {
+        max-height: 153.26px;
+    }
+    .description-box {
+        min-height: 48px;
+    }
+  }
+  
+  @media (min-width: 500px) {
+    .image-box {
+      min-height: 174.27px;
+    }
+    .image-box img {
+        max-height: 174.27px;
+    }
+    .description-box {
+        min-height: 48px;
+    }
+  }
+  
+  @media (min-width: 576px) {
+    .image-box {
+      min-height: 191.51px;
+    }
+    .image-box img {
+        max-height: 191.51px;
+    }
+    .description-box {
+        min-height: 48px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .image-box {
+      min-height: 191.52px;
+    }
+    .image-box img {
+        max-height: 191.52px;
+    }
+    .description-box {
+        min-height: 48px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .image-box {
+      min-height: 165.65px;
+    }
+    .image-box img {
+        max-height: 165.65px;
+    }
+    .description-box {
+        min-height: 48px;
+    }
+
+  }
+  
+  @media (min-width: 1200px) {
+    .image-box {
+      min-height: 204.47px;
+    }
+    .image-box img {
+        max-height: 204.47px;
+    }
+    .description-box {
+        min-height: 48px;
+    }
+  }
+  
+@media screen and (max-width: 991px) {
+    .form-header,.navbar-header {
+        margin: auto;
+    }
+}
+
+.background-blue-dark {
+    background-color: #0D2F50;
+  }
+
+
+@media (max-width: 1280px){
+    .modal-dialog  {
+      height:630px;
+      width:90%;
+    }
+    .modal-body {
+      height: 500px;	
+    }
+}
+@media screen and (min-width:1281px) and (max-width:1600px){
+    .modal-dialog  {
+      height:700px;
+      width:1000px;
+    }
+    .modal-body {
+      height: 550px;	
+    }
+}
+@media screen and (min-width:1601px) and (max-width:1920px){
+    .modal-dialog  {
+      height:830px;
+      width:1200px;
+    }
+    .modal-body {
+      height: 700px;	
+    }
+}
+
+/*Vertically centering Bootstrap modal window*/
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events: all;
+}
+
+
+.gambar-tutorial{
+  max-height: 100px;
+}
+
+.item-desc{
+  font-size: 12px;
+}
