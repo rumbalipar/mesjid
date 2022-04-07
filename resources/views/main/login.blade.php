@@ -114,7 +114,7 @@
                 @if (isset($data['logo']) && trim($data['logo']) != '')
                     <img src="{{ url('/') }}/assets/images/{{ $data['logo'] }}" class="img-fluid rounded" alt="Logo">                 
                 @endif
-                <h4 class="company_title">{{ isset($data['nama']) ? trim($data['nama']) : 'Cafe' }}</h4>
+                <h4 class="company_title">{{ isset($data['nama']) ? trim($data['nama']) : 'Mesjid' }}</h4>
             </div>
             <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
                 <div class="container-fluid">
