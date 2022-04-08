@@ -4,6 +4,31 @@
     Aplikasi Mesjid
 @endsection
 
+@section('css')
+<style>
+    .modal {
+        padding: 0 !important; // override inline padding-right added from js
+    }
+
+    .modal .modal-dialog {
+        width: 90%;
+        max-width: none;
+        height: 100%;
+        margin: 0;
+    }
+
+    .modal .modal-content {
+        height: 90%;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .modal .modal-body {
+        overflow-y: auto;
+    }
+</style>
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-12 mt-2">
@@ -107,14 +132,14 @@
                             <td class="text-right">{{ number_format($self->saldo(date('Y-m-d',strtotime('-1 day',strtotime($datas['tanggal']))),$kategori_pemasukan_id)) }}</td>
                             <td class="text-right">
                                 @if ($self->saldoMasuk($datas['tanggal'],$kategori_pemasukan_id) > 0)
-                                    <a class="input" href="{{ route('transaksisaldo.saldomasuk',['tanggal' => $datas['tanggal'],'kategori_pemasukan_id' => $kategori_pemasukan_id]) }}">{{ number_format($self->saldoMasuk($datas['tanggal'],$kategori_pemasukan_id)) }}</a>
+                                    <a class="input" href="{{ route('transaksisaldo.saldomasuk.web',['tanggal' => $datas['tanggal'],'kategori_pemasukan_id' => $kategori_pemasukan_id]) }}">{{ number_format($self->saldoMasuk($datas['tanggal'],$kategori_pemasukan_id)) }}</a>
                                 @else
                                     {{ number_format($self->saldoMasuk($datas['tanggal'],$kategori_pemasukan_id)) }}
                                 @endif
                             </td>
                             <td class="text-right">
                                 @if ($self->saldoKeluar($datas['tanggal'],$kategori_pemasukan_id) > 0)
-                                    <a class="input" href="{{ route('transaksisaldo.saldokeluar',['tanggal' => $datas['tanggal'],'kategori_pemasukan_id' => $kategori_pemasukan_id]) }}">{{ number_format($self->saldoKeluar($datas['tanggal'],$kategori_pemasukan_id)) }}</a>
+                                    <a class="input" href="{{ route('transaksisaldo.saldokeluar.web',['tanggal' => $datas['tanggal'],'kategori_pemasukan_id' => $kategori_pemasukan_id]) }}">{{ number_format($self->saldoKeluar($datas['tanggal'],$kategori_pemasukan_id)) }}</a>
                                 @else
                                     {{ number_format($self->saldoKeluar($datas['tanggal'],$kategori_pemasukan_id)) }}
                                 @endif

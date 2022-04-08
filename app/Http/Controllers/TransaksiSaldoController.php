@@ -97,6 +97,21 @@ class TransaksiSaldoController extends Controller
         ]);
     }
 
+    public function viewSaldoMasukWeb(Request $request,$tanggal){
+        $data = [];
+        $kategori_pemasukan_id = $request->has('kategori_pemasukan_id') && trim($request->input('kategori_pemasukan_id')) != "" ? trim($request->input('kategori_pemasukan_id')) : '';
+        if(trim($tanggal) != "" && date('Y-m-d',strtotime(trim($tanggal)))){
+            $data = SaldoMasuk::whereDate('tanggal',$tanggal);
+            if($kategori_pemasukan_id != ""){
+                $data = $data->where('kategori_pemasukan_id',$kategori_pemasukan_id);
+            }
+            $data = $data->get();
+        }
+        return view('transaksisaldo.saldomasukweb',[
+            'data' => $data
+        ]);
+    }
+
     public function viewSaldoKeluar(Request $request,$tanggal){
         $data = [];
         $kategori_pemasukan_id = $request->has('kategori_pemasukan_id') && trim($request->input('kategori_pemasukan_id')) != "" ? trim($request->input('kategori_pemasukan_id')) : '';
@@ -108,6 +123,21 @@ class TransaksiSaldoController extends Controller
             $data = $data->get();
         }
         return view('transaksisaldo.saldokeluar',[
+            'data' => $data
+        ]);
+    }
+
+    public function viewSaldoKeluarWeb(Request $request,$tanggal){
+        $data = [];
+        $kategori_pemasukan_id = $request->has('kategori_pemasukan_id') && trim($request->input('kategori_pemasukan_id')) != "" ? trim($request->input('kategori_pemasukan_id')) : '';
+        if(trim($tanggal) != "" && date('Y-m-d',strtotime(trim($tanggal)))){
+            $data = SaldoKeluar::whereDate('tanggal',$tanggal);
+            if($kategori_pemasukan_id != ""){
+                $data = $data->where('kategori_pemasukan_id',$kategori_pemasukan_id);
+            }
+            $data = $data->get();
+        }
+        return view('transaksisaldo.saldokeluarweb',[
             'data' => $data
         ]);
     }

@@ -44,6 +44,8 @@ Route::prefix('transaksisaldo')->group(function(){
     Route::get('/',[TransaksiSaldoController::class,'index'])->name('transaksisaldo.index');
     Route::get('/saldomasuk/{tanggal}',[TransaksiSaldoController::class,'viewSaldoMasuk'])->name('transaksisaldo.saldomasuk');
     Route::get('/saldokeluar/{tanggal}',[TransaksiSaldoController::class,'viewSaldoKeluar'])->name('transaksisaldo.saldokeluar');
+    Route::get('/saldomasukweb/{tanggal}',[TransaksiSaldoController::class,'viewSaldoMasukWeb'])->name('transaksisaldo.saldomasuk.web');
+    Route::get('/saldokeluarweb/{tanggal}',[TransaksiSaldoController::class,'viewSaldoKeluarWeb'])->name('transaksisaldo.saldokeluar.web');
 });
 
 Route::group(['middleware' => ['authCheck']],function(){

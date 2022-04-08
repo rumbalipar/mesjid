@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ url('/') }}/assets/bootstrap-select/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="{{ url('/') }}/assets/datepicker/dist/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="{{ url('/') }}/assets/css/styles.css">
+    @yield('css')
 </head>
 <body>
     <div class="container">
