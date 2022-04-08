@@ -158,7 +158,7 @@ class SaldoMasukController extends Controller
         date_default_timezone_set("Asia/Bangkok");
         header('Content-Type: application/pdf');
         $profile = CompanyProfile::first();
-        $logoUrl = isset($profile['logo']) ? url('/').'/assets/images/'.$profile['logo'] : url('/').'/assets/images/logo.png';
+        $logoUrl = isset($profile['logo']) && $profile['logo'] != '' ? url('/').'/assets/images/'.$profile['logo'] : url('/').'/assets/images/logo.png';
         $nama = isset($profile['nama']) ? trim($profile['nama']) : '';
         $alamat = isset($profile['alamat']) ? nl2br(trim($profile['alamat'])) : '';
         $telepon = isset($profile['telepon']) ? trim($profile['telepon']) : '';
