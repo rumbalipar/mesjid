@@ -59,8 +59,8 @@
                 <tr>
                     <th class="bg-info text-center text-white font-weight-bold">Tanggal</th>
                     <th class="bg-info text-center text-white font-weight-bold">Saldo Awal</th>
-                    <th class="bg-info text-center text-white font-weight-bold">Saldo Masuk</th>
-                    <th class="bg-info text-center text-white font-weight-bold">Saldo Keluar</th>
+                    <th class="bg-info text-center text-white font-weight-bold">Penerimaan</th>
+                    <th class="bg-info text-center text-white font-weight-bold">Pengeluaran</th>
                     <th class="bg-info text-center text-white font-weight-bold">Saldo</th>
                 </tr>
             </thead>

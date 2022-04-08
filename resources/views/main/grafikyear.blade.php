@@ -95,7 +95,7 @@
        var myChart = document.getElementById("myChart");
 
        var saldoMasukData = {
-           label: 'Saldo Masuk',
+           label: 'Penerimaan',
            data: saldomasuk,
            backgroundColor: 'rgba(0, 99, 132, 0.6)',
            borderColor: 'rgba(0, 99, 132, 1)',
@@ -103,7 +103,7 @@
        };
 
        var saldoKeluarData = {
-           label: 'Saldo Keluar',
+           label: 'Pengeluaran',
            data: saldokeluar,
            backgroundColor: 'rgba(99, 132, 0, 0.6)',
            borderColor: 'rgba(99, 132, 0, 1)',

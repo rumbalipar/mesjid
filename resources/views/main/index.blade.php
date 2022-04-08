@@ -65,14 +65,14 @@
     </div>
     <div class="col-md-3 mt-2">
         <div class="col bg-success text-white px-2 py-1 text-right">
-            <h3 class="text-center font-weight-bold">Saldo Masuk</h3>
+            <h3 class="text-center font-weight-bold">Penerimaan</h3>
             <h4 class="text-right">{{ number_format($saldomasuk) }}</h4>
             <span class="small font-weight-bold">{{ date('d-m-Y',strtotime($tanggal_dari)) }} s/d {{ date('d-m-Y',strtotime($tanggal_sampai)) }}</span>
         </div>
     </div>
     <div class="col-md-3 mt-2">
         <div class="col bg-danger text-white px-2 py-1 text-right">
-            <h3 class="text-center font-weight-bold">Saldo Keluar</h3>
+            <h3 class="text-center font-weight-bold">Pengeluaran</h3>
             <h4 class="text-right">{{ number_format($saldokeluar) }}</h4>
             <span class="small font-weight-bold">{{ date('d-m-Y',strtotime($tanggal_dari)) }} s/d {{ date('d-m-Y',strtotime($tanggal_sampai)) }}</span>
         </div>
@@ -95,8 +95,8 @@
                     <tr>
                         <th class="bg-info text-center text-white font-weight-bold">Tanggal</th>
                         <th class="bg-info text-center text-white font-weight-bold">Saldo Awal</th>
-                        <th class="bg-info text-center text-white font-weight-bold">Saldo Masuk</th>
-                        <th class="bg-info text-center text-white font-weight-bold">Saldo Keluar</th>
+                        <th class="bg-info text-center text-white font-weight-bold">Penerimaan</th>
+                        <th class="bg-info text-center text-white font-weight-bold">Pengeluaran</th>
                         <th class="bg-info text-center text-white font-weight-bold">Saldo</th>
                     </tr>
                 </thead>
