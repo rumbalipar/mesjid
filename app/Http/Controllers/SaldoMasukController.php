@@ -201,6 +201,6 @@ class SaldoMasukController extends Controller
         ]);
         $html = $html->render();
         $mpdf->WriteHTML($html);
-        $mpdf->Output("kwitansi.pdf",'I');
+        $mpdf->Output("kwitansi.pdf",'D');
     }
 }
