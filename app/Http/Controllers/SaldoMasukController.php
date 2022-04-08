@@ -201,6 +201,7 @@ class SaldoMasukController extends Controller
         ]);
         $html = $html->render();
         $mpdf->WriteHTML($html);
-        $mpdf->Output("kwitansi.pdf",'D');
+        $fileName = isset($data['pemberi']) && $data['pemberi'] != '' ? "kwitansi ".$data['pemberi'].".pdf" : "kwitansi.pdf";
+        $mpdf->Output($fileName,'D');
     }
 }
