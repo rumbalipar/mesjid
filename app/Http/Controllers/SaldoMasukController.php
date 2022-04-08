@@ -156,6 +156,7 @@ class SaldoMasukController extends Controller
 
     public function kwitansi($id){
         date_default_timezone_set("Asia/Bangkok");
+        header('Content-Type: application/pdf');
         $profile = CompanyProfile::first();
         $logoUrl = isset($profile['logo']) ? url('/').'/assets/images/'.$profile['logo'] : '';
         $nama = isset($profile['nama']) ? trim($profile['nama']) : '';
