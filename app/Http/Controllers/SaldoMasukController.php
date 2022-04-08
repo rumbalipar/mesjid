@@ -178,6 +178,7 @@ class SaldoMasukController extends Controller
                             </tr>
                         </table>';
         $mpdf = new \Mpdf\Mpdf([
+            'tempDir' => storage_path('tempdir'),
             'margin_top' => 32,
             'margin_bottom' => 30,
             'margin_header' => 10,
