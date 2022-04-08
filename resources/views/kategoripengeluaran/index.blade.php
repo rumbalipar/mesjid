@@ -40,6 +40,7 @@
             <tr>
                 <th class="bg-info text-white text-center forn-weight-bold">Kode</th>
                 <th class="bg-info text-white text-center forn-weight-bold">Deskripsi</th>
+                <th class="bg-info text-white text-center forn-weight-bold">Approval</th>
                 @if(\App\Models\User::find(session()->get('sesiuserid'))->GroupUser->Module()->where('route',Route::currentRouteName())->first()->pivot->ubah == 'Y')
                 <th class="bg-info text-white text-center forn-weight-bold">Ubah</th>
                 @endif
@@ -53,6 +54,7 @@
                 <tr>
                     <td class="text-center">{{ $datas['kode'] }}</td>
                     <td>{{ $datas['deskripsi'] }}</td>
+                    <td>{{ $datas['approval'] }}</td>
                     @if(\App\Models\User::find(session()->get('sesiuserid'))->GroupUser->Module()->where('route',Route::currentRouteName())->first()->pivot->ubah == 'Y')
                     <td class="text-center">
                         <a href="{{ route('kategoripengeluaran.edit',['id' => $datas['id']]) }}" class="btn btn-sm btn-primary input" title="Edit Kategori Pengeluaran">Ubah</a>

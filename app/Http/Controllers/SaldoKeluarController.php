@@ -44,7 +44,7 @@ class SaldoKeluarController extends Controller
         return view('saldokeluar.input',[
             'tipepembayaran' => TipePembayaran::orderBy('deskripsi')->get(),
             'kategoripemasukan' => KategoriPemasukan::orderBy('deskripsi')->get(),
-            'kategoripengeluaran' => KategoriPengeluaran::orderBy('deskripsi')->get(),
+            'kategoripengeluaran' => KategoriPengeluaran::where('approval','N')->orderBy('deskripsi')->get(),
             'action' => 'Create',
         ]);
     }
@@ -53,7 +53,7 @@ class SaldoKeluarController extends Controller
         return view('saldokeluar.input',[
             'tipepembayaran' => TipePembayaran::orderBy('deskripsi')->get(),
             'kategoripemasukan' => KategoriPemasukan::orderBy('deskripsi')->get(),
-            'kategoripengeluaran' => KategoriPengeluaran::orderBy('deskripsi')->get(),
+            'kategoripengeluaran' => KategoriPengeluaran::where('approval','N')->orderBy('deskripsi')->get(),
             'action' => 'Edit',
             'data' => SaldoKeluar::find($id)
         ]);
@@ -63,7 +63,7 @@ class SaldoKeluarController extends Controller
         return view('saldokeluar.input',[
             'tipepembayaran' => TipePembayaran::orderBy('deskripsi')->get(),
             'kategoripemasukan' => KategoriPemasukan::orderBy('deskripsi')->get(),
-            'kategoripengeluaran' => KategoriPengeluaran::orderBy('deskripsi')->get(),
+            'kategoripengeluaran' => KategoriPengeluaran::where('approval','N')->orderBy('deskripsi')->get(),
             'action' => 'Delete',
             'data' => SaldoKeluar::find($id)
         ]);

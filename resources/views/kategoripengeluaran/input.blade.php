@@ -34,6 +34,13 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="Y" name="approval" {{ old('approval',isset($data['approval']) ? $data['approval'] : '') == 'Y' ? "checked" : "" }}>&nbsp;Approval</label>
+                    </div>
+                </div>
+            </div>
         </div>
         <button class="btn btn-sm {{ isset($action) && $action == "Delete" ? "btn-danger" : "btn-primary" }}" type="submit">{{ isset($action) ? $action : "Submit" }}</button>
     </form>

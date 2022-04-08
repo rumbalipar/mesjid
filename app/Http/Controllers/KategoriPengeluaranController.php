@@ -56,6 +56,7 @@ class KategoriPengeluaranController extends Controller
             $data = new KategoriPengeluaran();
             $data->kode = trim($request->input('kode'));
             $data->deskripsi = trim($request->input('deskripsi'));
+            $data->approval = $request->has('approval') && $request->input('approval') == 'Y'  ? $request->input('approval') : 'N';
             $data->save();
             return "<script>parent.$('#modal-action').modal('hide');parent.alertWithRefresh('Data berhasil di tambahkan');</script>";
         } catch (\Throwable $th) {
@@ -77,6 +78,7 @@ class KategoriPengeluaranController extends Controller
             $data = KategoriPengeluaran::find($id);
             $data->kode = trim($request->input('kode'));
             $data->deskripsi = trim($request->input('deskripsi'));
+            $data->approval = $request->has('approval') && $request->input('approval') == 'Y'  ? 'Y' : 'N';
             $data->update();
             return "<script>parent.$('#modal-action').modal('hide');parent.alertWithRefresh('Data berhasil di ubah');</script>";
         } catch (\Throwable $th) {

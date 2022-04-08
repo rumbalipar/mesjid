@@ -13,9 +13,9 @@ class KategoriPengeluaran extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['kode','deskripsi'];
+    protected $fillable = ['kode','deskripsi','approval'];
 
-    protected $visible = ['id','kode','deskripsi'];
+    protected $visible = ['id','kode','deskripsi','approval'];
 
     public function SaldoKeluars(){
         return $this->hasMany(SaldoKeluar::class,'kategori_pengeluaran_id','id');
