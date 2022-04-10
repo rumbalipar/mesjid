@@ -49,6 +49,7 @@ class GrafikController extends Controller
             'periode' => date('F Y',strtotime('01-'.$dari)).' s/d '.date('F Y',strtotime('01-'.$sampai)),
             'kategoripemasukan' => KategoriPemasukan::orderBy('deskripsi')->get(),
             'applicationcompany' => CompanyProfile::first(),
+            'kategori' => $kategori_pemasukan_id != '' ? KategoriPemasukan::find($kategori_pemasukan_id)->deskripsi : '', 
         ]);
     }
 
@@ -88,6 +89,7 @@ class GrafikController extends Controller
             'kategoripemasukan' => KategoriPemasukan::orderBy('deskripsi')->get(),
             'grafik' => json_encode($grafik),
             'applicationcompany' => CompanyProfile::first(),
+            'kategori' => $kategori_pemasukan_id != '' ? KategoriPemasukan::find($kategori_pemasukan_id)->deskripsi : '', 
         ]);
     }
 

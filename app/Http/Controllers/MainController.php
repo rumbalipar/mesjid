@@ -40,6 +40,7 @@ class MainController extends Controller
             'data' => $data,
             'applicationcompany' => CompanyProfile::first(),
             'self' => $this,
+            'kategori' => $kategori_pemasukan_id != '' ? KategoriPemasukan::find($kategori_pemasukan_id)->deskripsi : '', 
             'kategoripemasukan' => KategoriPemasukan::orderBy('deskripsi')->get(),
             'kategori_pemasukan_id' => $kategori_pemasukan_id,
             'tanggal_dari' => $tanggal_dari,

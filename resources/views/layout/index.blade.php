@@ -29,6 +29,9 @@
                     <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item dropdown" role="presentation">
+                                <a class="nav-link" style="color:#006400"  href="{{ route('home') }}">Home</a>
+                            </li>
                             @if(count(\App\Http\Controllers\MainController::aksesUser()) > 0)
                                 @foreach (\App\Http\Controllers\MainController::aksesUser() as $groupmodule => $module)
                                 <li class="nav-item dropdown" role="presentation">
