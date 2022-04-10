@@ -14,17 +14,17 @@
     <div class="col-12">
         <div class="row text-center font-weight-bold">
             <div class="col-4">
-                <img src="{{ url('/') }}/assets/images/pilih-tanggal.png" class="img-fluid img-thumbnail" alt="" style="max-height: 96px">
+                <img src="{{ url('/') }}/assets/images/pilih-tanggal.png" class="img-fluid" alt="" style="max-height: 96px">
                 &nbsp;<i class="fa fa-arrow-right"></i><br>
                 Masukkan Tahun dari dan sampai
             </div>
             <div class="col-4">
-                <img src="{{ url('/') }}/assets/images/select.png" class="img-fluid img-thumbnail" alt="" style="max-height: 96px">
+                <img src="{{ url('/') }}/assets/images/select.png" class="img-fluid" alt="" style="max-height: 96px">
                 &nbsp;<i class="fa fa-arrow-right"></i><br>
                 Pilih Kategori
             </div>
             <div class="col-4">
-                <img src="{{ url('/') }}/assets/images/show.png" class="img-fluid img-thumbnail" alt="" style="max-height: 96px">
+                <img src="{{ url('/') }}/assets/images/show.png" class="img-fluid" alt="" style="max-height: 96px">
                 <br>
                 Klik Tombol Show
             </div>
