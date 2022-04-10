@@ -18,13 +18,8 @@
             <nav class="navbar navbar-light navbar-expand-md text-white bg-secondary text-left" style="background-image: linear-gradient(to bottom right, white, #17a2b8);">
                 <div class="container-fluid">
                     <a class="navbar-brand text-white navbar-header" href="{{ route('home') }}">
-                        @if (isset($applicationcompany['logo']) && trim($applicationcompany['logo']) != '')
-                            <img src="{{ url('/') }}/assets/images/{{ trim($applicationcompany['logo']) }}" style="max-height:40px;" alt="">
-                            &nbsp; <span style="color:#006400">{{  trim($applicationcompany['nama']) }}</span>
-                        @else
-                            <img src="{{ url('/') }}/assets/images/logo.png" style="max-height:40px;" alt="">
-                        @endif
-
+                        <img src="{{ url('/') }}/assets/images/{{ isset($applicationcompany['logo']) && trim($applicationcompany['logo']) != '' ? trim($applicationcompany['logo']) : 'logo.png' }}" style="max-height:40px;" alt="">
+                        &nbsp; <span style="color:#006400" class="font-weight-bold">{{ isset($applicationcompany['nama']) && $applicationcompany['nama'] != ''  ? trim($applicationcompany['nama']) : '' }}</span>
                     </a>
                     <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navcol-1">
