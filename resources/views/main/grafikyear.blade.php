@@ -16,7 +16,7 @@
             <div class="col-4">
                 <img src="{{ url('/') }}/assets/images/pilih-tanggal.png" class="img-fluid img-thumbnail" alt="" style="max-height: 96px">
                 &nbsp;<i class="fa fa-arrow-right"></i><br>
-                Masukkan Tanggal dari dan sampai
+                Masukkan Tahun dari dan sampai
             </div>
             <div class="col-4">
                 <img src="{{ url('/') }}/assets/images/select.png" class="img-fluid img-thumbnail" alt="" style="max-height: 96px">
