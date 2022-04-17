@@ -31,14 +31,16 @@
             </thead>
             <tbody>
                 @foreach ($data as $datas)
-                <td class="text-center">{{ $datas['kode'] }}</td>
-                <td>{{ $datas['deskripsi'] }}</td>
-                <td>
-                    <form method="POST" action="{{ route('aruskas.aruskasmasuk.kategoripemasukan.destroy',['id' => $id,'kategoriid' => $datas['id']]) }}" class="form-delete">
-                        @csrf
-                        <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
-                    </form>
-                </td>
+                <tr>
+                    <td class="text-center">{{ $datas['kode'] }}</td>
+                    <td>{{ $datas['deskripsi'] }}</td>
+                    <td>
+                        <form method="POST" action="{{ route('aruskas.aruskasmasuk.kategoripemasukan.destroy',['id' => $id,'kategoriid' => $datas['id']]) }}" class="form-delete">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
