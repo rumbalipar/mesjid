@@ -104,7 +104,7 @@ class LaporanController extends Controller
         $html = $html->render();
         $mpdf->WriteHTML($html);
         $fileName = "Laporan Arus Kas.pdf";
-        $mpdf->Output($fileName,'I');
+        $mpdf->Output($fileName,'D');
     }
 
     public function penerimaanArusKas($id,$periode){
