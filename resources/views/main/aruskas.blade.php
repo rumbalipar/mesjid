@@ -6,9 +6,10 @@
 
 @section('content')
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
             <h2 class="text-center">LAPORAN ARUS KAS</h2>
             <h3 class="text-center">{{ isset($applicationcompany->nama) ? $applicationcompany->nama : '' }}</h3>
+            <a href="{{ route('laporan.aruskas.pdf') }}" target="_blank" class="btn btn-sm btn-info"><span class="fa fa-print"></span> Cetak</a>
             <hr>
         </div>
     </div>
