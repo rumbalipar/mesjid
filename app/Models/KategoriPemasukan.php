@@ -28,4 +28,8 @@ class KategoriPemasukan extends Model
     public function Pengajuans(){
         return $this->hasMany(Pengajuan::class,'kategori_pemasukan_id','id');
     }
+
+    public function ArusKasMasuks(){
+        return $this->belongsToMany(ArusKasMasuk::class,'arus_kas_masuk_kategori_pemasukan','kategori_pemasukan_id','arus_kas_masuk_id')->withTimestamps();
+    }
 }

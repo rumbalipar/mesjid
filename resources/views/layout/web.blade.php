@@ -25,6 +25,9 @@
                     <li class="nav-item dropdown" role="presentation">
                         <a class="nav-link text-white"  href="{{ route('index') }}">Home</a>
                     </li>
+                    <li class="nav-item dropdown" role="presentation">
+                        <a class="nav-link text-white"  href="{{ route('laporan.aruskas') }}">laporan</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Grafik

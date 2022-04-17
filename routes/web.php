@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\ArusKasController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\GroupModuleController;
 use App\Http\Controllers\GroupUserController;
 use App\Http\Controllers\KategoriPemasukanController;
 use App\Http\Controllers\KategoriPengeluaranController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ModuleController;
@@ -39,6 +41,13 @@ Route::prefix('grafik')->group(function(){
     Route::get('/month',[GrafikController::class,'month'])->name('grafik.month');
     Route::get('/year',[GrafikController::class,'year'])->name('grafik.year');
 });
+
+Route::prefix('laporan')->group(function(){
+    Route::get('/month',[LaporanController::class,'month'])->name('laporan.month');
+    Route::get('/aruskas',[LaporanController::class,'arusKas'])->name('laporan.aruskas');
+    Route::get('/aruskas/pdf',[LaporanController::class,'arusKasPdf'])->name('laporan.aruskas.pdf');
+});
+
 
 Route::prefix('transaksisaldo')->group(function(){
     Route::get('/',[TransaksiSaldoController::class,'index'])->name('transaksisaldo.index');
@@ -178,6 +187,48 @@ Route::group(['middleware' => ['authCheck']],function(){
         Route::post('/input/{id}',[ApprovalController::class,'post'])->name('approval.post');
         Route::get('/reset/{id}',[ApprovalController::class,'reset'])->name('approval.reset');
         Route::post('/reset/{id}',[ApprovalController::class,'postReset'])->name('approval.reset.post');
+    });
+
+    Route::prefix('aruskas')->group(function(){
+        Route::get('/', [ArusKasController::class, 'index'])->name('aruskas.index');
+        Route::get('/create', [ArusKasController::class, 'create'])->name('aruskas.create');
+        Route::post('/create', [ArusKasController::class, 'store'])->name('aruskas.store');
+        Route::get('/edit/{id}', [ArusKasController::class, 'edit'])->name('aruskas.edit');
+        Route::post('/edit/{id}', [ArusKasController::class, 'update'])->name('aruskas.update');
+        Route::get('/delete/{id}', [ArusKasController::class, 'delete'])->name('aruskas.delete');
+        Route::post('/delete/{id}', [ArusKasController::class, 'destroy'])->name('aruskas.destroy');
+
+        Route::prefix('aruskasmasuk')->group(Function(){
+            Route::get('/{id}', [ArusKasController::class, 'arusKasMasuk'])->name('aruskas.aruskasmasuk.index');
+            Route::get('/create/{id}', [ArusKasController::class, 'arusKasMasukCreate'])->name('aruskas.aruskasmasuk.create');
+            Route::post('/create/{id}', [ArusKasController::class, 'arusKasMasukStore'])->name('aruskas.aruskasmasuk.store');
+            Route::get('/edit/{id}', [ArusKasController::class, 'arusKasMasukEdit'])->name('aruskas.aruskasmasuk.edit');
+            Route::post('/edit/{id}', [ArusKasController::class, 'arusKasMasukUpdate'])->name('aruskas.aruskasmasuk.update');
+            Route::get('/delete/{id}', [ArusKasController::class, 'arusKasMasukDelete'])->name('aruskas.aruskasmasuk.delete');
+            Route::post('/delete/{id}', [ArusKasController::class, 'arusKasMasukDestroy'])->name('aruskas.aruskasmasuk.destroy');
+
+            Route::prefix('kategoripemasukan')->group(function(){
+                Route::get('/{id}',[ArusKasController::class,'arusKasMasukKategori'])->name('aruskas.aruskasmasuk.kategoripemasukan');
+                Route::post('/post/{id}',[ArusKasController::class,'arusKasMasukKategoriPost'])->name('aruskas.aruskasmasuk.kategoripemasukan.post');
+                Route::post('/delete/{id}/kategori/{kategoriid}',[ArusKasController::class,'arusKasMasukKategoriDestroy'])->name('aruskas.aruskasmasuk.kategoripemasukan.destroy');
+            });
+
+            Route::prefix('kategoripengeluaran')->group(function(){
+                Route::get('/{id}',[ArusKasController::class,'arusKasKeluarKategori'])->name('aruskas.aruskaskeluar.kategoripengeluaran');
+                Route::post('/post/{id}',[ArusKasController::class,'arusKasKeluarKategoriPost'])->name('aruskas.aruskaskeluar.kategoripengeluaran.post');
+                Route::post('/delete/{id}/kategori/{kategoriid}',[ArusKasController::class,'arusKasKeluarKategoriDestroy'])->name('aruskas.aruskaskeluar.kategoripengeluaran.destroy');
+            });
+        });
+
+        Route::prefix('aruskaskeluar')->group(Function(){
+            Route::get('/{id}', [ArusKasController::class, 'arusKasKeluar'])->name('aruskas.aruskaskeluar.index');
+            Route::get('/create/{id}', [ArusKasController::class, 'arusKasKeluarCreate'])->name('aruskas.aruskaskeluar.create');
+            Route::post('/create/{id}', [ArusKasController::class, 'arusKasKeluarStore'])->name('aruskas.aruskaskeluar.store');
+            Route::get('/edit/{id}', [ArusKasController::class, 'arusKasKeluarEdit'])->name('aruskas.aruskaskeluar.edit');
+            Route::post('/edit/{id}', [ArusKasController::class, 'arusKasKeluarUpdate'])->name('aruskas.aruskaskeluar.update');
+            Route::get('/delete/{id}', [ArusKasController::class, 'arusKasKeluarDelete'])->name('aruskas.aruskaskeluar.delete');
+            Route::post('/delete/{id}', [ArusKasController::class, 'arusKasKeluarDestroy'])->name('aruskas.aruskaskeluar.destroy');
+        });
     });
 });
 

@@ -1,3 +1,11 @@
+.no-padding{
+  padding: 0px;
+}
+
+.font-style-italic{
+  font-style: italic;
+}
+
 @media (min-width: 350px) {
     .image-box {
       min-height: 113.88px;

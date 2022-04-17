@@ -18,7 +18,7 @@ Class Month {
         12 => "Desember"
     ];
     public static function getName($key){
-        return isset(self::$bulan[$key]) ? self::$bulan[$key] : '';
+        return isset(self::$bulan[(int) $key]) ? self::$bulan[(int) $key] : '';
     }
     public static function all(){
         return self::$bulan;

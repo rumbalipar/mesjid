@@ -24,4 +24,8 @@ class KategoriPengeluaran extends Model
     public function Pengajuans(){
         return $this->hasMany(Pengajuan::class,'kategori_pengeluaran_id','id');
     }
+
+    public function ArusKasKeluars(){
+        return $this->belongsToMany(ArusKasKeluar::class,'arus_kas_keluar_kategori_pengeluaran','kategori_pengeluaran_id','arus_kas_keluar_id')->withTimestamps();
+    }
 }
