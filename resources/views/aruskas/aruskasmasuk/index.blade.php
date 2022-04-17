@@ -18,6 +18,7 @@
                 <tr>
                     <th class="bg-info text-white text-center font-weight-bold">Sequence</th>
                     <th class="bg-info text-white text-center font-weight-bold">Deskripsi</th>
+                    <th class="bg-info text-white text-center font-weight-bold">List Kategori</th>
                     <th class="bg-info text-white text-center font-weight-bold">Kategori Pemasukan</th>
                     <th class="bg-info text-white text-center font-weight-bold">Ubah</th>
                     <th class="bg-info text-white text-center font-weight-bold">Hapus</th>
@@ -28,6 +29,7 @@
                     <tr>
                         <td class="text-center">{{ $datas['seq'] }}</td>
                         <td>{{ $datas['deskripsi'] }}</td>
+                        <td class="text-center">{!! implode('<br>',collect($datas->KategoriPemasukans()->get())->pluck('deskripsi')->toArray()) !!}</td>
                         <td class="text-center">
                             <a href="{{ route('aruskas.aruskasmasuk.kategoripemasukan',['id' => $datas['id']]) }}" class="btn btn-sm btn-secondary input" title="Kategori Pemasukan">Kategori Pemasukan</a>
                         </td>
