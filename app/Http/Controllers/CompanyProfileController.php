@@ -43,7 +43,7 @@ class CompanyProfileController extends Controller
         }
 
         try {
-            CompanyProfile::firstOrCreate([
+            CompanyProfile::first()->update([
                 'nama' => trim($request->input('nama')),
                 'website' => $request->has('website') ? trim($request->input('website')) : '',
                 'alamat' => $request->has('alamat') ? trim($request->input('alamat')) : '',
